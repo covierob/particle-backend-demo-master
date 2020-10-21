@@ -17,6 +17,20 @@ function handleBlinkingStateChanged (event) {
     exports.sse.send(message)
 }
 
+function handleMotionDetected (event) {
+    // read variables from the event
+    let eventData = JSON.parse(event.data);
+    let data = eventData.data;
+    let deviceId = eventData.coreid;
+    let timestamp = Date.parse(eventData.published_at);
+
+    // create a message to be sent to a client
+    let message = timestamp + data;
+
+    // send the message to the client (as stream)
+    exports.sse.send(message)
+}
+
 function handleButtonStateChanged (event) {
     let eventData = JSON.parse(event.data);
     let data = eventData.data;
