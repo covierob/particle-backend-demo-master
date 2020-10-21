@@ -63,4 +63,5 @@ function handleButtonStateChanged (event) {
 
 exports.sse = null;
 exports.handleBlinkingStateChanged = handleBlinkingStateChanged;
-exports.handleButtonStateChanged = handleButtonStateChanged;
+exports.handleButtonStateChanged = handleButtonStateChanged; 
+exports.handleMotionDetected = handleMotionDetected;
