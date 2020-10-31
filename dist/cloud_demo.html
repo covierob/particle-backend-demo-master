@@ -13,22 +13,20 @@
 
         <h4>Entry/Exit Event</h4>
         <!-- Sync example -->
-        <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
-
-        <!-- Counter example (received as event) -->
-        <p>Button press counter: {{ buttonPressCounter }}</p>
+        <p>Person is entering the room: {{ irAStatus_0 }}</p>
+        <p>Person is exiting the room: {{ irBStatus_0 }}</p>
         
         <hr>
         <h4>Counter Variable</h4>
         <!-- Read variables example -->
-        <p>Anzahl Raum cove: {{ counter_0 }} </p>
+        <p>Anzahl Besucher cove: {{ counter_0 }} </p>
         <button v-on:click="getCounter(0)">Get counter (cove)</button>
         <br>
-        <p>Anzahl Raum gassachr: {{ counter_1 }} </p>
+        <p>Anzahl Besucher gassachr: {{ counter_1 }} </p>
         <button v-on:click="getCounter(1)">Get counter (gassachr)</button>
         <br>
         <p>Gesamtanzahl Besucher: {{ counter_0 }} + {{ counter_1 }} </p>
-        <button v-on:click="getCounter(0) + getCounter(1)">Get all</button>
+        <button v-on:click="getCounter(0)">Get all</button>
         
         <hr>
         <h4>Funktion</h4>

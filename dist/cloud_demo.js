@@ -34,8 +34,7 @@ var app = new Vue({
         },
         // react on events: update the variables to be displayed
         updateVariables(ev) {
-            // Event "handleMotionDetected"
-            
+
             // Event "buttonStateChanged"
             if (ev.eventName === "buttonStateChanged") {
                 this.buttonPressCounter = ev.eventData.counter;
@@ -44,21 +43,21 @@ var app = new Vue({
                 }
             }
             // Event "blinkingStateChanged"
-            else if (ev.eventName === "blinkingStateChanged") {
-                if (ev.eventData.message === "started blinking") {
+            else if (ev.eventName === "motionDetected") {
+                if (ev.eventData.message === "Entry") {
                     if (ev.deviceNumber === 0) {
-                        this.blinking_0 = true;
+                        this.irAStatus_0 = true;
                     }
                     else if (ev.deviceNumber === 1) {
-                        this.blinking_1 = true;
+                        this.irAStatus_1 = true;
                     }
                 }
-                if (ev.eventData.message === "stopped blinking") {
+                if (ev.eventData.message === "Exit") {
                     if (ev.deviceNumber === 0) {
-                        this.blinking_0 = false;
+                        this.irBStatus_0 = false;
                     }
                     else if (ev.deviceNumber === 1) {
-                        this.blinking_1 = false;
+                        this.irBStatus_1 = false;
                     }
                 }
             }
