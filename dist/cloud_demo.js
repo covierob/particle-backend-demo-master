@@ -9,6 +9,12 @@ var app = new Vue({
         buttonsSync: false,       // true if the buttons were pressed within 1 second
         blinking_0: false,        // true if device 0 is blinking.
         blinking_1: false,        // true if device 0 is blinking.
+
+        // Lichtschranke variablen
+        counter: 0,
+        waitToConfirm: false,
+        irAStatus: true,
+        irBStatus: true,
         // add your own variables here ...
     },
     // This function is executed once when the page is loaded.
@@ -31,6 +37,8 @@ var app = new Vue({
         },
         // react on events: update the variables to be displayed
         updateVariables(ev) {
+            // Event "handleMotionDetected"
+            
             // Event "buttonStateChanged"
             if (ev.eventName === "buttonStateChanged") {
                 this.buttonPressCounter = ev.eventData.counter;
