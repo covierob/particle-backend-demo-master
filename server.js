@@ -60,7 +60,7 @@ for (let device of devices) {
 }
 
 // Read a variable. E.g.
-// GET /api/device/0/variable/buttonState
+// GET /api/device/0/variable/counter
 app.get('/api/device/:id/variable/:name', (req, res) => {
     let id = req.params.id;
     let variableName = req.params.name;

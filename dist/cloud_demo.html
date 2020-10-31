@@ -17,26 +17,25 @@
 
         <!-- Counter example (received as event) -->
         <p>Button press counter: {{ buttonPressCounter }}</p>
-
-        <!-- Blinking example (received as event) -->
-        <p>Device 0 is blinking: {{ blinking_0 }}</p>
-        <p>Device 1 is blinking: {{ blinking_1 }}</p>
         
         <hr>
         <h4>Counter Variable</h4>
         <!-- Read variables example -->
-        <p>Button state (0): {{ buttonState_0 }} </p>
-        <button v-on:click="getButtonState(0)">Get button state (Device 0)</button>
+        <p>Anzahl Raum cove: {{ counter_0 }} </p>
+        <button v-on:click="getCounter(0)">Get counter (cove)</button>
         <br>
-        <p>Button state (1): {{ buttonState_1 }} </p>
-        <button v-on:click="getButtonState(1)">Get button state (Device 1)</button>
+        <p>Anzahl Raum gassachr: {{ counter_1 }} </p>
+        <button v-on:click="getCounter(1)">Get counter (gassachr)</button>
+        <br>
+        <p>Gesamtanzahl Besucher: {{ counter_1 }} </p>
+        <button v-on:click="getCounter(1)">Get all</button>
         
         <hr>
         <h4>Funktion</h4>
         <!-- Call functions example  -->
         <p>Blink red</p>
-        <button v-on:click="blinkRed(0)">Blink Red (Device 0)</button>
-        <button v-on:click="blinkRed(1)">Blink Red (Device 1)</button>
+        <button v-on:click="blinkRed(0)">Blink Red (cove)</button>
+        <button v-on:click="blinkRed(1)">Blink Red (gassachr)</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

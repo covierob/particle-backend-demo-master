@@ -11,7 +11,8 @@ var app = new Vue({
         blinking_1: false,        // true if device 0 is blinking.
 
         // Lichtschranke Variablen
-        counter: 0,
+        counter_0: 0,
+        counter_1: 0,
         waitToConfirm: false,
         irAStatus: true,
         irBStatus: true,
@@ -78,17 +79,17 @@ var app = new Vue({
                     alert("Could not call the function 'blinkRed' of device number " + nr + ".\n\n" + error)
                 })
         },
-        // get the value of the variable "buttonState" on the device with number "nr" from your backend
-        getButtonState: function (nr) {
-            axios.get(rootUrl + "/api/device/" + nr + "/variable/buttonState")
+        // get the value of the variable "counter" on the device with number "nr" from your backend
+        getCounter: function (nr) {
+            axios.get(rootUrl + "/api/device/" + nr + "/variable/counter")
                 .then(response => {
                     // Handle the response from the server
-                    var buttonState = response.data.result;
+                    var counter = response.data.result;
                     if (nr === 0) {
-                        this.buttonState_0 = buttonState;
+                        this.counter_0 = counter;
                     }
                     else if (nr === 1) {
-                        this.buttonState_1 = buttonState;
+                        this.counter_1 = counter;
                     }
                     else {
                         console.log("unknown device number: " + nr);
