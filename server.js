@@ -55,6 +55,7 @@ for (let device of devices) {
 
     // add event listeners here
     source.addEventListener('motionDetected', eventListeners.handleMotionDetected)
+    source.addEventListener('buttonStateChanged', eventListeners.handleButtonStateChanged)
     source.addEventListener('blinkingStateChanged', eventListeners.handleBlinkingStateChanged)
 }
 
