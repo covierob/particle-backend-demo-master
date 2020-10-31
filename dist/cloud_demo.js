@@ -10,7 +10,7 @@ var app = new Vue({
         blinking_0: false,        // true if device 0 is blinking.
         blinking_1: false,        // true if device 0 is blinking.
 
-        // Lichtschranke variablen
+        // Lichtschranke Variablen
         counter: 0,
         waitToConfirm: false,
         irAStatus: true,
