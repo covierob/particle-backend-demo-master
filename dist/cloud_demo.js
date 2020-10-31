@@ -10,8 +10,10 @@ var app = new Vue({
         counter_0: 0,
         counter_1: 0,
         waitToConfirm: false,
-        irAStatus: true,
-        irBStatus: true,
+        irAStatus_0: false,
+        irBStatus_0: false,
+        irAStatus_1: false,
+        irBStatus_1: false,
         // add your own variables here ...
     },
     // This function is executed once when the page is loaded.
@@ -42,7 +44,7 @@ var app = new Vue({
                     this.buttonsSync = ev.eventData.pressedSync;
                 }
             }
-            // Event "blinkingStateChanged"
+            // Event "motionDetected"
             else if (ev.eventName === "motionDetected") {
                 if (ev.eventData.message === "Entry") {
                     if (ev.deviceNumber === 0) {
