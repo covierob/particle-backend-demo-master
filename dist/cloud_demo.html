@@ -11,7 +11,7 @@
 
     <div id="app">
 
-        <h4>Events</h4>
+        <h4>Entry/Exit Event</h4>
         <!-- Sync example -->
         <p>Buttons pressed within 1 second: {{ buttonsSync }}</p>
 
@@ -23,7 +23,7 @@
         <p>Device 1 is blinking: {{ blinking_1 }}</p>
         
         <hr>
-        <h4>Variables</h4>
+        <h4>Counter Variable</h4>
         <!-- Read variables example -->
         <p>Button state (0): {{ buttonState_0 }} </p>
         <button v-on:click="getButtonState(0)">Get button state (Device 0)</button>
@@ -32,7 +32,7 @@
         <button v-on:click="getButtonState(1)">Get button state (Device 1)</button>
         
         <hr>
-        <h4>Functions</h4>
+        <h4>Funktion</h4>
         <!-- Call functions example  -->
         <p>Blink red</p>
         <button v-on:click="blinkRed(0)">Blink Red (Device 0)</button>
