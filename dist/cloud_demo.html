@@ -27,8 +27,8 @@
         <p>Anzahl Besucher gassachr: {{ counter_1 }} </p>
         <button v-on:click="getCounter(1)">Get counter (gassachr)</button>
         <br>
-        <p>Gesamtanzahl Besucher: {{ counter_0 }} + {{ counter_1 }} </p>
-        <button v-on:click="getCounter(0)">Get all</button>
+        <p>Gesamtanzahl Besucher: {{ counter_0 + counter_1 }} </p>
+        <button v-on:click="getCounter(0) + getCounter(1)">Get all</button>
         
         <hr>
         <h4>Funktion</h4>
