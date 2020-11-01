@@ -10,10 +10,10 @@ var app = new Vue({
         counter_0: 0,
         counter_1: 0,
         waitToConfirm: false,
-        irAStatus_0: false,
-        irBStatus_0: false,
-        irAStatus_1: false,
-        irBStatus_1: false,
+        entry_0: false,
+        exit_0: false,
+        entry_1: false,
+        exit_1: false,
         // add your own variables here ...
     },
     // This function is executed once when the page is loaded.
@@ -36,30 +36,22 @@ var app = new Vue({
         },
         // react on events: update the variables to be displayed
         updateVariables(ev) {
-
-            // Event "buttonStateChanged"
-            if (ev.eventName === "buttonStateChanged") {
-                this.buttonPressCounter = ev.eventData.counter;
-                if (ev.eventData.message === "pressed") {
-                    this.buttonsSync = ev.eventData.pressedSync;
-                }
-            }
             // Event "motionDetected"
-            else if (ev.eventName === "motionDetected") {
+            if (ev.eventName === "motionDetected") {
                 if (ev.eventData.message === "Entry") {
                     if (ev.deviceNumber === 0) {
-                        this.irAStatus_0 = true;
+                        this.entry_0 = true;
                     }
                     else if (ev.deviceNumber === 1) {
-                        this.irAStatus_1 = true;
+                        this.entry_1 = true;
                     }
                 }
                 if (ev.eventData.message === "Exit") {
                     if (ev.deviceNumber === 0) {
-                        this.irBStatus_0 = false;
+                        this.exit_0 = false;
                     }
                     else if (ev.deviceNumber === 1) {
-                        this.irBStatus_1 = false;
+                        this.exit_1 = false;
                     }
                 }
             }
